@@ -1,2 +1,3 @@
-# requests-yt
+# Request System
 Request system for YouTube chat
+Coming soon...
