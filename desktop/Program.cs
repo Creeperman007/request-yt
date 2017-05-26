@@ -8,7 +8,7 @@ namespace BassRebels
 {
     class Program
     {
-        public static string v = "1.0";
+        public static string v = "1.0.1";
         public static bool open = true;
         public static string request;
         public static string requestLast;
@@ -36,9 +36,20 @@ namespace BassRebels
                 open = false;
                 goto skip;
             }
-            chid = conf.Read("ChatID", "YTChat");
-            api = conf.Read("APIKey", "YTChat");
-            refresh = Convert.ToInt32(conf.Read("RefreshTime", "Settings"));
+            try
+            {
+                chid = conf.Read("ChatID", "YTChat");
+                api = conf.Read("APIKey", "YTChat");
+                refresh = Convert.ToInt32(conf.Read("RefreshTime", "Settings"));
+            }
+            catch
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("{0} [ERROR] Cannot read variables from config. Did you fill in the config?", DateTime.Now.ToString("H:mm:ss"));
+                Console.ResetColor();
+                open = false;
+                goto skip;
+            }
             Console.WriteLine("{1} [INFO] Request system v{0}\n{1} [INFO] Programmed by Creeperman007", v, DateTime.Now.ToString("H:mm:ss"));
             Thread.Sleep(250);
             Version.Get(v);

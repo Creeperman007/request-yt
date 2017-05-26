@@ -10,10 +10,23 @@ namespace BassRebels
         {
             Console.WriteLine("{0} [INFO] Connecting to database", DateTime.Now.ToString("H:mm:ss"));
             var conf = new Config.IniFile("config.ini");
-            var host = conf.Read("DBHost", "SQL");
-            var user = conf.Read("DBUser", "SQL");
-            var pass = conf.Read("DBPass", "SQL");
-            var name = conf.Read("DBName", "SQL");
+            var host = "";
+            var user = "";
+            var pass = "";
+            var name = "";
+            try
+            {
+                host = conf.Read("DBHost", "SQL");
+                user = conf.Read("DBUser", "SQL");
+                pass = conf.Read("DBPass", "SQL");
+                name = conf.Read("DBName", "SQL");
+            }
+            catch
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("{0} [ERROR] Cannot read variables (SQL) from config. Did you fill in the config?", DateTime.Now.ToString("H:mm:ss"));
+                Console.ResetColor();
+            }
             string cs = @"server=" + host + ";userid=" + user + ";password=" + pass + ";database=" + name;
             MySqlConnection conn = null;
             try
