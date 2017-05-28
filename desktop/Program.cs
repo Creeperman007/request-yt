@@ -8,7 +8,7 @@ namespace request_yt
 {
     class Program
     {
-        public static string v = "1.2";
+        public static string v = "1.0.3";
         public static bool open = true;
         public static string request;
         public static string requestLast;
@@ -23,7 +23,7 @@ namespace request_yt
             int refresh = 0;
             if (!File.Exists("config.ini"))
             {
-                conf.Write("RefreshTime", "");
+                conf.Write("RefreshTime", "", "Settings");
                 conf.Write("DBHost", "", "SQL");
                 conf.Write("DBUser", "", "SQL");
                 conf.Write("DBPass", "", "SQL");
