@@ -4,11 +4,11 @@ using System.Threading;
 using System.Windows.Forms;
 using System.IO;
 
-namespace BassRebels
+namespace request_yt
 {
     class Program
     {
-        public static string v = "1.0.1";
+        public static string v = "1.2";
         public static bool open = true;
         public static string request;
         public static string requestLast;
@@ -75,7 +75,7 @@ namespace BassRebels
                     catch (Exception ex)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("{1} [ERROR] An error occurred:\n{0}\nPress any key to continue...", ex.ToString(), DateTime.Now.ToString("H:mm:ss"));
+                        Console.WriteLine("{1} [ERROR] An error occurred:\n{0}", ex.ToString(), DateTime.Now.ToString("H:mm:ss"));
                         Console.ResetColor();
                         MessageBox.Show("An error occurred!\nMore info in console.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         open = false;

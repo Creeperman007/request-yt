@@ -2,7 +2,7 @@
 using System.Net;
 using Newtonsoft.Json.Linq;
 
-namespace BassRebels
+namespace request_yt
 {
     class Version
     {

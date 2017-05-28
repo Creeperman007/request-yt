@@ -2,7 +2,7 @@
 using System.Net;
 using Newtonsoft.Json.Linq;
 
-namespace BassRebels
+namespace request_yt
 {
     class ChatRequest
     {
@@ -19,7 +19,7 @@ namespace BassRebels
                 if (lastMsg >= 0)
                 {
                     string authorId = Convert.ToString(data["items"][lastMsg]["snippet"]["authorChannelId"]);
-                    string author = authorName(authorId, api);
+                    string author = AuthorName(authorId, api);
                     string song = Convert.ToString(data["items"][lastMsg]["snippet"]["textMessageDetails"]["messageText"]);
                     return author + "¤" + song;
                 }
@@ -36,7 +36,7 @@ namespace BassRebels
                 return "";
             }
         }
-        private static string authorName(string id, string api)
+        private static string AuthorName(string id, string api)
         {
             try
             {

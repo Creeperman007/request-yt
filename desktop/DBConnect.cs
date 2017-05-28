@@ -2,7 +2,7 @@
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
-namespace BassRebels
+namespace request_yt
 {
     class DBConnect
     {
@@ -41,7 +41,7 @@ namespace BassRebels
                 cmd.Parameters.AddWithValue("@Name", reqIns);
                 cmd.Parameters.AddWithValue("@Session", idIns);
                 cmd.ExecuteNonQuery();
-                Console.WriteLine("{0} [INFO] Succesfully added request to database", DateTime.Now.ToString("H:mm:ss"));
+                Console.WriteLine("{0} [INFO] Successfully added request to database", DateTime.Now.ToString("H:mm:ss"));
 
             }
             catch (MySqlException ex)
@@ -59,7 +59,7 @@ namespace BassRebels
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("{1} [ERROR] Invalid username/password:\n{0}", ex.ToString(), DateTime.Now.ToString("H:mm:ss"));
                         Console.ResetColor();
-                        MessageBox.Show("Authentication to host failed: Access denied.\nPlease contact author.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Authentication to host failed: Access denied.\nPlease, check the config.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Program.open = false;
                         break;
                     case 1366:

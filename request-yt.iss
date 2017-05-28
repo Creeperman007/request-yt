@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Request System"
-#define MyAppVersion "1.0.1"
+#define MyAppVersion "1.0.2"
 #define MyAppPublisher "Creeperman007"
 #define MyAppExeName "request-yt.exe"
 
@@ -34,9 +34,16 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\request-yt.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\x64\SQLite.Interop.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\x86\SQLite.Interop.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\EntityFramework.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\EntityFramework.SqlServer.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\Google.Protobuf.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\MySql.Data.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\System.Data.SQLite.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\System.Data.SQLite.EF6.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\System.Data.SQLite.Linq.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
