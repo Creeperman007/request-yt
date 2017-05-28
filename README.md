@@ -18,10 +18,10 @@ This app can be used when you are doing radio show or any kind of music stream a
 1. Create a database with name you want
 1. Create table called *requests*
 1. Create these columns
-    * id - INT; AI;
+    * id - INT; A_I;
     * session - INT;
-    * name - TEXT; utf-8_bin;
-    * state - TEXT; utf-8_bin;
+    * name - TEXT; utf8_bin;
+    * state - TEXT; utf8_bin;
 > To Do: Add SQL command
 
 # For Developers
