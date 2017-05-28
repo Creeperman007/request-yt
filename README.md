@@ -25,7 +25,7 @@ This app can be used when you are doing radio show or any kind of music stream a
 > To Do: Add SQL command
 
 # For Developers
-## User NuGets
+## Used NuGets
 * EntityFramework (by *Microsoft*)
 * Google.Protobuf (by *Google Inc.*)
 * MySql.Data (by *Oracle*)
