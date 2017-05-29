@@ -13,7 +13,6 @@ This app can be used when you are doing radio show or any kind of music stream a
 * YouTube chat
 * Installed this app
 ## Future plans
-* Cache for usernames (or *data saver*)
 * Responding system
 ## Setup
 ### SQL database

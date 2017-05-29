@@ -8,7 +8,7 @@ namespace request_yt
 {
     class Program
     {
-        public static string v = "1.0.3";
+        public static string v = "1.2";
         public static bool open = true;
         public static string request;
         public static string requestLast;
@@ -20,7 +20,11 @@ namespace request_yt
             var conf = new Config.IniFile("config.ini");
             var chid = "";
             var api = "";
-            int refresh = 0;
+            int refresh = 500;
+            if (!File.Exists("usernameCache.sqlite"))
+            {
+                UserCache.CreateCache();
+            }
             if (!File.Exists("config.ini"))
             {
                 conf.Write("RefreshTime", "", "Settings");

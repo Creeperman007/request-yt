@@ -38,18 +38,32 @@ namespace request_yt
         }
         private static string AuthorName(string id, string api)
         {
-            try
+            string name = UserCache.ReadCache(id);
+            if (name == "")
             {
-                WebClient webClient = new WebClient();
-                WebClient n = new WebClient();
-                var json = n.DownloadString("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=channel&channelId=" + id + "&key=" + api);
-                string valueOriginal = Convert.ToString(json);
-                JObject data = JObject.Parse(valueOriginal);
-                return Convert.ToString(data["items"][0]["snippet"]["channelTitle"]);
+                try
+                {
+                    WebClient webClient = new WebClient();
+                    WebClient n = new WebClient();
+                    var json = n.DownloadString("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=channel&channelId=" + id + "&key=" + api);
+                    string valueOriginal = Convert.ToString(json);
+                    JObject data = JObject.Parse(valueOriginal);
+                    string channelTitle = Convert.ToString(data["items"][0]["snippet"]["channelTitle"]);
+                    try
+                    {
+                        UserCache.InsertName(id, channelTitle);
+                    }
+                    catch { }
+                    return channelTitle;
+                }
+                catch
+                {
+                    return "[Unknown user]";
+                }
             }
-            catch
+            else
             {
-                return "[Unknown user]";
+                return name;
             }
         }
     }
