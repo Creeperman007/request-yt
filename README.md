@@ -1,4 +1,6 @@
 # Request system for YouTube chat
+[![Build Status](https://travis-ci.org/Creeperman007/requests-yt.svg?branch=master)](https://travis-ci.org/Creeperman007/requests-yt)
+
 [Download latest](https://github.com/Creeperman007/requests-yt/releases/latest)
 ## Overview
 This app can be used when you are doing radio show or any kind of music stream and you don't want to have auto-queue.<br>
