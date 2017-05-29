@@ -50,7 +50,7 @@ if ($result->num_rows > 0)
 {
   while($row = $result->fetch_assoc())
   {
-    list($name, $song) = split('¤', $row["name"]);
+    list($name, $song) = preg_split('/¤/', $row["name"]);
     $ban = array('!request' => '', '!r' => '', '!Request' => '');
     $song = strtr($song, $ban);
     $id = $row["id"];
@@ -68,7 +68,7 @@ if ($result->num_rows > 0)
 {
   while($row = $result->fetch_assoc())
   {
-    list($name, $song) = split('¤', $row["name"]);
+    list($name, $song) = preg_split('/¤/', $row["name"]);
     $ban = array('!request' => '', '!r' => '', '!Request' => '');
     $song = strtr($song, $ban);
     $id = $row["id"];
