@@ -10,7 +10,6 @@ namespace request_yt
         {
             try
             {
-                WebClient webClient = new WebClient();
                 WebClient n = new WebClient();
                 var json = n.DownloadString("https://www.googleapis.com/youtube/v3/liveChat/messages?liveChatId=" + chid + "&part=snippet&key=" + api);
                 string valueOriginal = Convert.ToString(json);
@@ -43,7 +42,6 @@ namespace request_yt
             {
                 try
                 {
-                    WebClient webClient = new WebClient();
                     WebClient n = new WebClient();
                     var json = n.DownloadString("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=channel&channelId=" + id + "&key=" + api);
                     string valueOriginal = Convert.ToString(json);

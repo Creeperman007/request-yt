@@ -10,7 +10,6 @@ namespace request_yt
         {
             try
             {
-                WebClient webClient = new WebClient();
                 WebClient n = new WebClient();
                 var json = n.DownloadString("http://apis.creeperman007.tk/request-yt/v1/");
                 string valueOriginal = Convert.ToString(json);
