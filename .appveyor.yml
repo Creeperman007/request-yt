@@ -1,0 +1,7 @@
+configuration: Release
+cache:
+  - packages -> desktop\packages.config
+install:
+  - cmd: nuget restore
+build:
+  - project: desktop\request-yt.sln
