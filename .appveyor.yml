@@ -2,4 +2,4 @@ configuration: Release
 cache:
   - packages -> desktop\packages.config
 install:
-  - cmd: nuget restore
+  - cmd: nuget restore desktop\packages.config
