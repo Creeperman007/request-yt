@@ -1,5 +1,5 @@
 configuration: Release
 cache:
   - packages -> desktop\packages.config
-install:
-  - cmd: nuget restore desktop\packages.config
+before_build:
+  - cmd: nuget restore -PackagesDirectory desktop\packages.config
