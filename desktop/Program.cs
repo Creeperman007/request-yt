@@ -8,14 +8,23 @@ namespace request_yt
 {
     class Program
     {
-        public static string v = "1.2";
+        public static string v = "1.3";
         public static bool open = true;
         public static string request;
         public static string requestLast;
         public static Random r = new Random();
         public static int session = r.Next(1, 10000);
+        public static string autoupdate;
         static void Main(string[] args)
         {
+            if (File.Exists("temp/RequestYT-Setup.exe"))
+            {
+                try
+                {
+                    File.Delete("temp/RequestYT-Setup.exe");
+                }
+                catch { }
+            }
             DBConnect db = new DBConnect();
             var conf = new Config.IniFile("config.ini");
             var chid = "";
@@ -34,6 +43,7 @@ namespace request_yt
                 conf.Write("DBName", "", "SQL");
                 conf.Write("ChatID", "", "YTChat");
                 conf.Write("APIKey", "", "YTChat");
+                conf.Write("AutoUpdate", "true", "Updater");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("{0} [ERROR] Cannot find config.ini. Creating new one. Please fill the config in.", DateTime.Now.ToString("H:mm:ss"));
                 Console.ResetColor();
@@ -45,6 +55,19 @@ namespace request_yt
                 chid = conf.Read("ChatID", "YTChat");
                 api = conf.Read("APIKey", "YTChat");
                 refresh = Convert.ToInt32(conf.Read("RefreshTime", "Settings"));
+                try
+                {
+                    autoupdate = conf.Read("AutoUpdate", "Updater");
+                }
+                catch
+                {
+                    autoupdate = "false";
+                    try
+                    {
+                        conf.Write("AutoUpdate", "false", "Updater");
+                    }
+                    catch { }
+                }
             }
             catch
             {

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Net;
 using Newtonsoft.Json.Linq;
+using System.Diagnostics;
+using System.Threading;
 
 namespace request_yt
 {
@@ -21,9 +23,30 @@ namespace request_yt
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("{0} [WARN] New version is available. Please, consider updating.", DateTime.Now.ToString("H:mm:ss"));
-                    Console.ResetColor();
+                    if (Program.autoupdate == "true")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("{0} [WARN] New version is available.", DateTime.Now.ToString("H:mm:ss"));
+                        Console.ResetColor();
+                        Console.WriteLine("{0} [INFO] Starting updater...", DateTime.Now.ToString("H:mm:ss"));
+                        try
+                        {
+                            Process.Start("app-updater.exe");
+                            Environment.Exit(0);
+                        }
+                        catch
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("{0} [ERROR] Cannot start updater. Please, consider manual update.", DateTime.Now.ToString("H:mm:ss"));
+                            Console.ResetColor();
+                        }
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("{0} [WARN] New version is available. Please, consider updating.", DateTime.Now.ToString("H:mm:ss"));
+                        Console.ResetColor();
+                    }
                 }
             }
             catch

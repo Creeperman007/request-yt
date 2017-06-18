@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Request System"
-#define MyAppVersion "1.2"
+#define MyAppVersion "1.3"
 #define MyAppPublisher "Creeperman007"
 #define MyAppExeName "request-yt.exe"
 
@@ -18,8 +18,8 @@ AppPublisher={#MyAppPublisher}
 DefaultDirName=C:\request-yt
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
-LicenseFile=C:\Users\Uziv2\Documents\GitHub\requests-yt\LICENSE.txt
-OutputDir=C:\Users\Uziv2\Documents\GitHub\requests-yt
+LicenseFile=C:\Users\Uziv2\Documents\GitHub\request-yt\LICENSE.txt
+OutputDir=C:\Users\Uziv2\Documents\GitHub\request-yt
 OutputBaseFilename=RequestYT-Setup
 Compression=lzma
 SolidCompression=yes
@@ -33,18 +33,19 @@ Name: "german"; MessagesFile: "compiler:Languages\German.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\request-yt.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\x64\SQLite.Interop.dll"; DestDir: "{app}\x64\"; Flags: ignoreversion
-Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\x86\SQLite.Interop.dll"; DestDir: "{app}\x86\"; Flags: ignoreversion
-Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\EntityFramework.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\EntityFramework.SqlServer.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\Google.Protobuf.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\MySql.Data.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\System.Data.SQLite.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\System.Data.SQLite.EF6.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\System.Data.SQLite.Linq.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Uziv2\Documents\GitHub\requests-yt\desktop\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\request-yt.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\request-yt-updater\app-updater.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\x64\SQLite.Interop.dll"; DestDir: "{app}\x64\"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\x86\SQLite.Interop.dll"; DestDir: "{app}\x86\"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\EntityFramework.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\EntityFramework.SqlServer.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\Google.Protobuf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\MySql.Data.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\System.Data.SQLite.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\System.Data.SQLite.EF6.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\System.Data.SQLite.Linq.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
