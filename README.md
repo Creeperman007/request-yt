@@ -1,5 +1,5 @@
 # Request system for YouTube chat
-[![Build Status](https://travis-ci.org/Creeperman007/requests-yt.svg?branch=master)](https://travis-ci.org/Creeperman007/requests-yt) [![Build status](https://ci.appveyor.com/api/projects/status/de9mvns9hegqrlrw?svg=true)](https://ci.appveyor.com/project/Creeperman007/request-yt)
+[![Build Status](https://travis-ci.org/Creeperman007/request-yt.svg?branch=master)](https://travis-ci.org/Creeperman007/request-yt) [![Build status](https://ci.appveyor.com/api/projects/status/de9mvns9hegqrlrw?svg=true)](https://ci.appveyor.com/project/Creeperman007/request-yt)
 
 
 [Download latest](https://github.com/Creeperman007/requests-yt/releases/latest)
