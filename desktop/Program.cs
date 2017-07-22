@@ -8,7 +8,7 @@ namespace request_yt
 {
     class Program
     {
-        public static string v = "1.3";
+        public static string v = "1.3.1";
         public static bool open = true;
         public static string request;
         public static string requestLast;
@@ -88,11 +88,11 @@ namespace request_yt
             Console.WriteLine("{0} [TEST] Testing connection with database", DateTime.Now.ToString("H:mm:ss"));
             db.DBConnector(session, request);
             Console.WriteLine("{0} [TEST] Ending testing session", DateTime.Now.ToString("H:mm:ss"));
-            skip:
+        skip:
             while (open == true)
             {
                 request = ChatRequest.GetChat(chid, api);
-                if ((request.Contains("!request") || request.Contains("!r") || request.Contains("!Request")) && request != requestLast && !request.Contains("SongName") && request.Contains(' '))
+                if (Compare(request) && request != requestLast && !request.Contains("SongName") && request.Contains(' '))
                 {
                     Console.WriteLine("{0} [INFO] Adding new request", DateTime.Now.ToString("H:mm:ss"));
                     try
@@ -114,6 +114,18 @@ namespace request_yt
             }
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
+        }
+        private static bool Compare(string input)
+        {
+            string[] commands = { "!request", "!Request", "!r", "!R" };
+            foreach (string compare in commands)
+            {
+                if (input.Contains(compare))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
