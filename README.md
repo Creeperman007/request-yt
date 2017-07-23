@@ -27,6 +27,8 @@ This app can be used when you are doing radio show or any kind of music stream a
 > To Do: Add SQL command
 
 # For Developers
+## Notice
+If you want to edit this app or use it for yourself, I recommend not to download the updater with the source. It can cause troubles when you are playing with the code.
 ## Used NuGets
 * EntityFramework (by *Microsoft*)
 * Google.Protobuf (by *Google Inc.*)
