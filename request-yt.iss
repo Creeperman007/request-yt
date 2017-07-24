@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Request System"
-#define MyAppVersion "1.3.1"
+#define MyAppVersion "1.3.2"
 #define MyAppPublisher "Creeperman007"
 #define MyAppExeName "request-yt.exe"
 
@@ -34,7 +34,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\request-yt.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Uziv2\Documents\GitHub\request-yt-updater\app-updater.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Uziv2\Documents\GitHub\request-yt-updater\source\bin\Release\app-updater.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\x64\SQLite.Interop.dll"; DestDir: "{app}\x64\"; Flags: ignoreversion
 Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\x86\SQLite.Interop.dll"; DestDir: "{app}\x86\"; Flags: ignoreversion
 Source: "C:\Users\Uziv2\Documents\GitHub\request-yt\desktop\bin\Release\EntityFramework.dll"; DestDir: "{app}"; Flags: ignoreversion

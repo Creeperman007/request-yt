@@ -29,6 +29,7 @@ namespace request_yt
                         Console.WriteLine("{0} [WARN] New version is available.", DateTime.Now.ToString("H:mm:ss"));
                         Console.ResetColor();
                         Console.WriteLine("{0} [INFO] Starting updater...", DateTime.Now.ToString("H:mm:ss"));
+                        Thread.Sleep(1000);
                         try
                         {
                             Process.Start("app-updater.exe");
