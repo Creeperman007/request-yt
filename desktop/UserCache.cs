@@ -57,7 +57,9 @@ namespace request_yt
                 }
                 catch
                 {
-                    Console.WriteLine("a");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("{0} [WARN] Cannot insert username into cache.", DateTime.Now.ToString("H:mm:ss"));
+                    Console.ResetColor();
                 }
             }
         }

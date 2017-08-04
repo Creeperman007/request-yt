@@ -8,7 +8,7 @@ namespace request_yt
 {
     class Program
     {
-        public static string v = "1.3.2";
+        public static string v = "1.3.3";
         public static bool open = true;
         public static string request;
         public static string requestLast;
