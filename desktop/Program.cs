@@ -8,7 +8,7 @@ namespace request_yt
 {
     class Program
     {
-        public static string v = "1.3.3";
+        public static string v = "1.3.4";
         public static bool open = true;
         public static string request;
         public static string requestLast;
@@ -108,9 +108,11 @@ namespace request_yt
                         open = false;
                     }
                 }
+                else
+                {
+                    Thread.Sleep(refresh);
+                }
                 requestLast = request;
-                request = "";
-                Thread.Sleep(refresh);
             }
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
