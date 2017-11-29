@@ -23,6 +23,7 @@ This app can be used when you are doing radio show or any kind of music stream a
     * id - INT; A_I;
     * session - INT;
     * name - TEXT; utf8_bin;
+    * author - TEXT; utf8_bin;
     * state - TEXT; utf8_bin;
 > To Do: Add SQL command
 

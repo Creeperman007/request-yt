@@ -6,7 +6,7 @@ namespace request_yt
 {
     class DBConnect
     {
-        public void DBConnector(int idIns, string reqIns)
+        public void DBConnector(int idIns, string[] reqIns)
         {
             Console.WriteLine("{0} [INFO] Connecting to database", DateTime.Now.ToString("H:mm:ss"));
             var conf = new Config.IniFile("config.ini");
@@ -35,10 +35,11 @@ namespace request_yt
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO `requests` (session, name, state) VALUES (@Session, @Name, 'active')";
+                cmd.CommandText = "INSERT INTO `requests` (session, name, author, state) VALUES (@Session, @Name, @Author, 'active')";
                 cmd.Prepare();
 
-                cmd.Parameters.AddWithValue("@Name", reqIns);
+                cmd.Parameters.AddWithValue("@Name", reqIns[1]);
+                cmd.Parameters.AddWithValue("@Author", reqIns[0]);
                 cmd.Parameters.AddWithValue("@Session", idIns);
                 cmd.ExecuteNonQuery();
                 Console.WriteLine("{0} [INFO] Successfully added request to database", DateTime.Now.ToString("H:mm:ss"));

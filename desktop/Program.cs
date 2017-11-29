@@ -8,9 +8,9 @@ namespace request_yt
 {
     class Program
     {
-        public static string v = "1.3.4";
+        public static string v = "2.0";
         public static bool open = true;
-        public static string request;
+        public static string[] request = new string[2]; //0 - user, 1 - song
         public static string requestLast;
         public static Random r = new Random();
         public static int session = r.Next(1, 10000);
@@ -84,7 +84,8 @@ namespace request_yt
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("{1} [INFO] Session key: {0}\n{1} [INFO] Key is used for accessing the web interface.", session, DateTime.Now.ToString("H:mm:ss"));
             Console.ResetColor();
-            request = "Test¤Testing connection.";
+            request[0] = "Test";
+            request[1] = "Testing connection.";
             Console.WriteLine("{0} [TEST] Testing connection with database", DateTime.Now.ToString("H:mm:ss"));
             db.DBConnector(session, request);
             Console.WriteLine("{0} [TEST] Ending testing session", DateTime.Now.ToString("H:mm:ss"));
@@ -92,7 +93,7 @@ namespace request_yt
             while (open == true)
             {
                 request = ChatRequest.GetChat(chid, api);
-                if (Compare(request) && request != requestLast && !request.Contains("SongName") && request.Contains(' '))
+                if (Compare(request[1]) && request[1] != requestLast && !request[1].Contains("SongName") && request[1].Contains(' '))
                 {
                     Console.WriteLine("{0} [INFO] Adding new request", DateTime.Now.ToString("H:mm:ss"));
                     try
@@ -112,7 +113,7 @@ namespace request_yt
                 {
                     Thread.Sleep(refresh);
                 }
-                requestLast = request;
+                requestLast = request[1];
             }
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();

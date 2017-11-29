@@ -6,7 +6,7 @@ namespace request_yt
 {
     class ChatRequest
     {
-        public static string GetChat(string chid, string api)
+        public static string[] GetChat(string chid, string api)
         {
             try
             {
@@ -17,14 +17,14 @@ namespace request_yt
                 int lastMsg = Convert.ToInt32(data["pageInfo"]["totalResults"]) - 1;
                 if (lastMsg >= 0)
                 {
-                    string authorId = Convert.ToString(data["items"][lastMsg]["snippet"]["authorChannelId"]);
-                    string author = AuthorName(authorId, api);
-                    string song = Convert.ToString(data["items"][lastMsg]["snippet"]["textMessageDetails"]["messageText"]);
-                    return author + "¤" + song;
+                    string[] request = new string[2];
+                    request[0] = AuthorName(Convert.ToString(data["items"][lastMsg]["snippet"]["authorChannelId"]), api);
+                    request[1] = Convert.ToString(data["items"][lastMsg]["snippet"]["textMessageDetails"]["messageText"]);
+                    return request;
                 }
                 else
                 {
-                    return "";
+                    return new string[2] { "", "" };
                 }
             }
             catch
@@ -32,7 +32,7 @@ namespace request_yt
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("{0} [ERROR] Cannot get chat info.", DateTime.Now.ToString("H:mm:ss"));
                 Console.ResetColor();
-                return "";
+                return new string[2] { "", "" };
             }
         }
         private static string AuthorName(string id, string api)

@@ -50,11 +50,8 @@ if ($result->num_rows > 0)
 {
   while($row = $result->fetch_assoc())
   {
-    list($name, $song) = preg_split('/¤/', $row["name"]);
     $ban = array('!request' => '', '!r' => '', '!Request' => '', '!R' => '');
-    $song = strtr($song, $ban);
-    $id = $row["id"];
-    echo "<tr><td>$name</td><td style=\"padding-left: 10px;\">$song</td><td><form method=\"post\"><input type=\"submit\" name=\"sub\" value=\"Archive\"><input type=\"hidden\" name=\"id\" value=\"$id\"></form></td></tr>";
+    echo "<tr><td>".$row['author']."</td><td style=\"padding-left: 10px;\">".strtr($row['name'], $ban)."</td><td><form method=\"post\"><input type=\"submit\" name=\"sub\" value=\"Archive\"><input type=\"hidden\" name=\"id\" value=\"".$row['id']."\"></form></td></tr>";
   }
 }
 else
